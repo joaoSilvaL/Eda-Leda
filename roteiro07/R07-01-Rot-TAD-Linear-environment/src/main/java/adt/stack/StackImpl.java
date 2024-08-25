@@ -13,12 +13,11 @@ public class StackImpl<T> implements Stack<T> {
 
 	@Override
 	public T top(){
-		if (this.isEmpty()){
-			return null;
+		T retorno = null;
+		if (!this.isEmpty()){
+			retorno = this.array[this.top];
 		}
-		else{
-			return this.array[this.top];
-		}
+		return retorno;
 	}
 
 	@Override

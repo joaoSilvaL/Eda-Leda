@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class StudentQueueTest {
 
-	public QueueImpl<Integer> queue1;
+	public Queue<Integer> queue1;
 	public Queue<Integer> queue2;
 	public Queue<Integer> queue3;
 
@@ -33,9 +33,9 @@ public class StudentQueueTest {
 
 	private void getImplementations() {
 		// TODO O aluno deve ajustar aqui para instanciar sua implementação
-		queue1 = new QueueImpl<>(4);
-		queue2 = new QueueImpl<>(2);
-		queue3 = new QueueImpl<>(3);
+		queue1 = new QueueUsingStack(4);
+		queue2 = new QueueUsingStack<>(2);
+		queue3 = new QueueUsingStack<>(3);
 	}
 
 	// MÉTODOS DE TESTE
@@ -67,8 +67,8 @@ public class StudentQueueTest {
 
 	@Test(expected = QueueOverflowException.class)
 	public void testEnqueueComErro() throws QueueOverflowException {
-		queue1.enqueue(new Integer(5));
-		queue1.enqueue(new Integer(2));// vai depender do tamanho que a fila
+		queue1.enqueue(5);
+		queue1.enqueue(2);// vai depender do tamanho que a fila
 										// foi iniciada!!!
 	}
 
